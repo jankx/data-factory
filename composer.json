@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "Jankx\\DataFactory\\": "src/"
-        }
+        },
+        "files": [
+            "./factory.php"
+        ]
     },
     "authors": [
         {
