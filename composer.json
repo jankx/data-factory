@@ -1,0 +1,21 @@
+{
+    "name": "jankx/data-factory",
+    "description": "Create post types, taxonomies from theme.json settings",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jankx\\DataFactory\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Puleeno Nguyen",
+            "email": "puleeno@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "jankx/core": "*"
+    }
+}
