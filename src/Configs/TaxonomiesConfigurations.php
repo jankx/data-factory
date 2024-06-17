@@ -4,7 +4,7 @@ namespace Jankx\DataFactory\Configs;
 
 use Jankx;
 
-class PostTypeConfigurations
+class TaxonomiesConfigurations
 {
     private $type;
     private $slug;
@@ -75,9 +75,8 @@ class PostTypeConfigurations
             [
                 'public' => true,
                 'label' => $this->getName(),
+                'labels' => [],
                 'show_in_rest' => true,
-                'menu_icon' => 'dashicons-buddicons-topics',
-                'menu_position' => 8,
                 'show_in_menu' => true,
                 'show_ui' => true,
                 'show_admin_column' => true,

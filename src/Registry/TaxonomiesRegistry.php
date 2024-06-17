@@ -2,7 +2,7 @@
 
 namespace Jankx\DataFactory\Registry;
 
-use Jankx\DataFactory\Configs\PostTypeConfigurations;
+use Jankx\DataFactory\Configs\TaxonomiesConfigurations;
 use Jankx\GlobalConfigs;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
@@ -20,9 +20,15 @@ class TaxonomiesRegistry
         $taxonomiesConfigs = GlobalConfigs::get('taxonomies', []);
         foreach ($taxonomiesConfigs as $configs) {
             /**
-             * @var \Jankx\Configs\PostTypeConfigurations
+             * @var \Jankx\DataFactory\Configs\TaxonomiesConfigurations
              */
-            $taxonomiesConfig = $serializer->denormalize($configs, PostTypeConfigurations::class, 'json');
+            $taxonomiesConfig = $serializer->denormalize($configs, TaxonomiesConfigurations::class, 'json');
+
+            register_taxonomy(
+                $taxonomiesConfig->getType(),
+                $taxonomiesConfig->getPostTypes(),
+                $taxonomiesConfig->getOptions()
+            );
         }
     }
 }
