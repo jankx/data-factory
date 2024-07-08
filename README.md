@@ -25,7 +25,8 @@ Added config to theme.json to create post types or taxonomies
                 "type": "define taxonomu here",
                 "slug": "taxonomy slug",
                 "options": {
-                }
+                },
+                "post_types": ["post-type-slug"]
             }
         ]
     }
